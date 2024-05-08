@@ -4,31 +4,33 @@ title Unsubscribe System Flowchart
 
 // Define groups for better organization
 Files {
-  unsub.php [label: "unsub.php (Main PHP Script)", icon: file-code]
-  unsubscribe.log [label: "unsubscribe.log (Log File)", icon: file-text]
-  index.html [label: "index.html (Landing Page)", icon: globe]
+  unsub.php [label: "unsub.php: Main PHP script"]
+  unsubscribe.log [label: "unsubscribe.log: Logs events"]
+  index.html [label: "index.html: Landing page"]
 }
 
-// Define processes and decisions
-Start [shape: oval, icon: play] > Check URL Params [shape: diamond, icon: search]
-Check URL Params > Error [label: "Display Error: Missing Params", shape: oval, icon: alert-triangle]: Missing
-Check URL Params > Extract Info [label: "Extract Email, Batch, Timestamp, IP", shape: rectangle, icon: tool]: Present
-Extract Info > Log Event [label: "Log to unsubscribe.log", shape: rectangle, icon: file-plus]
-Log Event > Track GA Event [label: "Track Event with Google Analytics", shape: rectangle, icon: activity]
-Track GA Event > Redirect to 4sgm [label: "Redirect to https://4sgm.com/", shape: rectangle, icon: arrow-right-circle]
+// Define the process flow for unsub.php
+Start unsub.php [shape: oval] > Check URL Params [icon: search]
+Check URL Params > Params Missing? [shape: diamond, icon: alert-triangle]
+Params Missing? > Error Message [shape: oval, icon: x-circle]: Yes
+Params Missing? > Extract Info [icon: tool]: No
+Extract Info > Log Event [icon: file-text]
+Log Event > Track GA Event [icon: activity]
+Track GA Event > Redirect to 4sgm [icon: arrow-right-circle]
 
-// Landing page actions
-User Visit [shape: oval, icon: user-check] > Load index.html
-Load index.html > Fill Form [label: "User Fills Subscription Form", shape: rectangle, icon: edit-3]
-Fill Form > Validate Form [shape: diamond, icon: check-circle]
-Validate Form > Form Error [label: "Display Form Error", shape: oval, icon: x-circle]: Invalid
-Validate Form > Submit Form [label: "Submit Form", shape: rectangle, icon: send]: Valid
-Validate Form > Cancel Form/Unsubscribe [label: "Cancel Form / Unsubscribe", shape: rectangle, icon: cloud] > : Valid
+// Define the process flow for index.html
+Start index.html [shape: oval] > Display Form [icon: layout]
+Display Form > Form Submission [icon: send]
+Form Submission > Validate Form [icon: check-circle]
+Validate Form > Form Valid? [shape: diamond, icon: check-square]
+Form Valid? > Send POST to unsub.php [icon: upload]: Yes
+Form Valid? > Show Error [shape: oval, icon: x-circle]: No
+
+// Connections between files and processes
+unsub.php > unsubscribe.log [label: "writes to"]
+index.html > unsub.php [label: "POST request to", style: dashed]
+
+// Note on missing implementations
+Note [label: "Implement tracking and POST handling", shape: rectangle, color: red]
 
 
-// Connections
-unsub.php > index.html [label: "Includes Form and JS", color: blue]
-index.html > Google Analytics [label: "Includes GA Tracking Code", shape: rectangle, icon: bar-chart-2, color: green]
-
-// Note on implementation
-Note [label: "Implementation of GA tracking and POST handling needs to be done", shape: rectangle, icon: alert-octagon]
