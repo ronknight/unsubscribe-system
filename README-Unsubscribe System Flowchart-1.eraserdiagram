@@ -23,6 +23,7 @@ Load index.html > Fill Form [label: "User Fills Subscription Form", shape: recta
 Fill Form > Validate Form [shape: diamond, icon: check-circle]
 Validate Form > Form Error [label: "Display Form Error", shape: oval, icon: x-circle]: Invalid
 Validate Form > Submit Form [label: "Submit Form", shape: rectangle, icon: send]: Valid
+Validate Form > Cancel Form / Unsubscribe [label: "Cancel Form / Unsubscribe", shape: rectangle, icon: cloud] > : Valid
 
 
 // Connections
