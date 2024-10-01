@@ -4,12 +4,15 @@
 <h4 align="center">🔧 A PHP-based system for managing email unsubscriptions efficiently.</h4>
 
 <p align="center">
+  <a href="https://twitter.com/PinoyITSolution"><img src="https://img.shields.io/twitter/follow/PinoyITSolution?style=social"></a>
+  <a href="https://github.com/ronknight?tab=followers"><img src="https://img.shields.io/github/followers/ronknight?style=social"></a>
   <a href="https://github.com/ronknight/unsubscribe-system/stargazers"><img src="https://img.shields.io/github/stars/ronknight/unsubscribe-system.svg?logo=github"></a>
   <a href="https://github.com/ronknight/unsubscribe-system/network/members"><img src="https://img.shields.io/github/forks/ronknight/unsubscribe-system.svg?color=blue&logo=github"></a>
+  <a href="https://youtube.com/@PinoyITSolution"><img src="https://img.shields.io/youtube/channel/subscribers/UCeoETAlg3skyMcQPqr97omg"></a>
   <a href="https://github.com/ronknight/unsubscribe-system/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
   <a href="https://github.com/ronknight/unsubscribe-system/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
   <a href="#"><img src="https://img.shields.io/badge/Made%20with-PHP-777BB4.svg"></a>
-  <a href="https://github.com/ronknight"><img src="https://img.shields.io/badge/Made%20with%20%F0%9F%A4%8D%20by%20-%20ronknight-red"></a>
+  <a href="https://github.com/ronknight"><img src="https://img.shields.io/badge/Made%20with%20%F0%9F%A4%8D%20by%20-ronknight-red"></a>
 </p>
 
 <p align="center">
